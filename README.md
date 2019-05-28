@@ -111,11 +111,11 @@ The script download pdfs, transform them in to xml format, parse xml, and genera
 
 In case of error during generation of specific bus line timetable CSV, one can debug the execution. Set debug flag level to 5 (maximum) inside perl script.
 ```sh
-my $DEBUG = 0;
+my $DEBUG = 5;
 ```
-Uncomment routes varriable in configuration section and specify the problematice route that generate error.
+Use routes varriable in configuration section to specify the problematice route for debugging purpose.
 ```sh
-#@routes = ('P-01_A');
+@routes = ('P-01_A');
 ```
 Rerun the script to see verbose output on console.
 
