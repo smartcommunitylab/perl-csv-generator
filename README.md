@@ -18,8 +18,9 @@ RUN apt-get update && apt-get install -y perl pdftohtml liblist-moreutils-perl l
 ..\perl-csv-generator>docker run --interactive -v "C:\daily-work\perl-csv-generator\:/perl-csv-generator/" --tty container-perl-csv:latest bash
 ```
 Note: The command also mount project root 'perl-csv-generator' on ubuntu image as an efficient approach to perform edits from host windows machine.
+
 #### Trento
-1. In order to generate CSVs for Trento Urban timetables, change to directory BusExtractTn.
+1. In order to generate csv files for Trento Urban timetables, change to directory BusExtractTn.
 ```sh
 root@d07a339c8c6b:/# cd perl-csv-generator/BusExtractTn
 ```
@@ -52,9 +53,17 @@ my $BASE_TTE_NAME = "OrariDiDirettrice-T18I-T-";
 root@d07a339c8c6b:/# cd perl-csv-generator/BusExtractTn
 root@d07a339c8c6b:/perl-csv-generator/BusExtractTn# perl extract-tn.pl
 ```
+The script download pdfs, transform them in to xml format, parse xml, and generate csv. The script store also the intermediate execution results.
+
+| Folders | Description |
+| ------ | ------ |
+| pdf-Trento | Downloaded pdfs are stored in this folder |
+| xml-Trento | Xmls generated using pdftohtml library are stored here. |
+| csv-Trento | Output CSV's are stored in this folder |
+
 
 #### Rovereto
-1. In order to generate CSVs for Rovereto Urban timetables, change to directory BusExtractRovereto.
+1. In order to generate csv files for Rovereto Urban timetables, change to directory BusExtractRovereto.
 ```sh
 root@d07a339c8c6b:/# cd perl-csv-generator/BusExtractRovereto
 ```
@@ -89,3 +98,12 @@ my $BASE_TTE_NAME = "OrariDiDirettrice-R18R-";
 root@d07a339c8c6b:/# cd perl-csv-generator/BusExtractRovereto
 root@d07a339c8c6b:/perl-csv-generator/BusExtractRovereto# perl extract-rov.pl
 ```
+The script download pdfs, transform them in to xml format, parse xml, and generate csv. The script store also the intermediate execution results.
+
+| Folders | Description |
+| ------ | ------ |
+| pdf-Rovereto | Downloaded pdfs are stored in this folder |
+| xml-Rovereto | Xmls generated using pdftohtml library are stored here. |
+| csv-Rovereto | Output CSV's are stored in this folder |
+
+
