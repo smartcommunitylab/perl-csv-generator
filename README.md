@@ -107,3 +107,16 @@ The script download pdfs, transform them in to xml format, parse xml, and genera
 | csv-Rovereto | Output CSV's are stored in this folder |
 
 
+## Debug
+
+In case of error during generation of specific bus line timetable CSV, one can debug the execution. Set debug flag level to 5 (maximum) inside perl script.
+```sh
+my $DEBUG = 0;
+```
+Uncomment routes varriable in configuration section and specify the problematice route that generate error.
+```sh
+#@routes = ('P-01_A');
+```
+Rerun the script to see verbose output on console.
+
+For more information write to <support@smartcommunitylab.it>
