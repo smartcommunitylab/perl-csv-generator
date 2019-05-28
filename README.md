@@ -50,5 +50,42 @@ my $BASE_TTE_NAME = "OrariDiDirettrice-T18I-T-";
 4. Run the script.
 ```sh
 root@d07a339c8c6b:/# cd perl-csv-generator/BusExtractTn
+root@d07a339c8c6b:/perl-csv-generator/BusExtractTn# perl extract-tn.pl
 ```
 
+#### Rovereto
+1. In order to generate CSVs for Rovereto Urban timetables, change to directory BusExtractRovereto.
+```sh
+root@d07a339c8c6b:/# cd perl-csv-generator/BusExtractRovereto
+```
+2. Peform clean
+```sh
+root@d07a339c8c6b:/# sh clean-rov.sh
+```
+3. Open extract-rov.pl script on project root and configure properties.
+```sh
+my @routes = ('P-01_A','P-01_R','P-02_A','P-02_R','P-03_A','P-03_R','P-04_A','P-04_R','P-05_A','P-05_R','P-06_A','P-06_R','P-07_A','P-07_R','P-%20A_C','P-%20B_C','P-%20V_A','P-%20V_R','P-AB_A','P-AB_R','N-01_A','N-01_R','N-02_A','N-02_R','N-03_A','N-03_R','N-06_A','N-06_R');
+
+my @routes_feriale = ('P-01_A','P-01_R','P-02_A','P-02_R','P-03_A','P-03_R','P-04_A','P-04_R','P-05_A','P-05_R','P-06_A','P-06_R','P-07_A','P-07_R','P-%20A_C','P-%20B_C','P-%20V_A','P-%20V_R','N-01_A','N-01_R','N-02_A','N-02_R','N-03_A','N-03_R','N-06_A','N-06_R');
+
+my @routes_festivo = ('P-02_A','P-02_R','P-06_A','P-06_R','P-AB_A','P-AB_R');
+
+#@routes = ('P-01_A');
+#@routes_feriale = ('P-01_A');
+#@routes_festivo = ();
+
+my $BASE_TTE_URL = "https://www.trentinotrasporti.it/pdforari/urbani/linee";
+my $BASE_TTE_NAME = "OrariDiDirettrice-R18R-";
+```
+
+| Property | Description |
+| ------ | ------ |
+| BASE_TTE_URL | The URL of TrentinoTrasport website URL |
+| BASE_TTE_NAME | The common sarting prefix of PDF files |
+| routes | Array specifying route name of buses, contains short name of all the bus lines whose timetables are provided on BASE_TTE_URL url. Any new addition to bus service must be added in this variable |
+
+4. Run the script.
+```sh
+root@d07a339c8c6b:/# cd perl-csv-generator/BusExtractRovereto
+root@d07a339c8c6b:/perl-csv-generator/BusExtractRovereto# perl extract-rov.pl
+```
