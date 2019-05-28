@@ -15,9 +15,14 @@ RUN apt-get update && apt-get install -y perl pdftohtml liblist-moreutils-perl l
 ```
 3. Launch the ubuntu image using the command below.
 ```sh
-..\perl-csv-generator>docker run --interactive -v "C:\daily-work\perl-csv-generator\:/perl-csv-generator/" --tty container-perl-csv:latest bash
+..\perl-csv-generator>docker run --interactive -v <PATH_ROOT_ON_HOST_MACHINE>:<PATH_INSIDE_IMAGE> --tty container-perl-csv:latest bash
 ```
-Note: The command also mount project root 'perl-csv-generator' on ubuntu image as an efficient approach to perform edits from host windows machine.
+for example
+```sh
+C:\projects\perl-csv-generator>docker run --interactive -v "C:\projects\perl-csv-generator\:/perl-csv-generator/" --tty container-perl-csv:latest bash
+```
+
+**Note:** The command also mounts project root 'perl-csv-generator' on ubuntu image as an efficient approach to perform edits from host windows machine.
 
 #### Trento
 1. In order to generate csv files for Trento Urban timetables, change to directory BusExtractTn.
