@@ -40,9 +40,12 @@ my @routes_festivo = ('01_A','01_R','02_C','03_A','03_R','04_A','04_R','05_A','0
 my $BASE_TTE_URL = "https://www.trentinotrasporti.it/pdforari/urbani/linee";
 my $BASE_TTE_NAME = "OrariDiDirettrice-T18I-T-";
 ```
-**$BASE_TTE_URL:** The URL of TrentinoTrasport website URL.
-**$BASE_TTE_NAME:** The common prefix of PDF files.
-**routes:** Array specifying route name of buses, contains short name of all the bus lines whose timetables are provided on BASE_TTE_URL url. Any new addition to bus service must be added in this variable.
+
+| Property | Description |
+| ------ | ------ |
+| BASE_TTE_URL | The URL of TrentinoTrasport website URL |
+| BASE_TTE_NAME | The common sarting prefix of PDF files |
+| routes | Array specifying route name of buses, contains short name of all the bus lines whose timetables are provided on BASE_TTE_URL url. Any new addition to bus service must be added in this variable |
 
 4. Run the script.
 ```sh
